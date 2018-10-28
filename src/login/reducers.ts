@@ -1,5 +1,5 @@
 import { getType } from "typesafe-actions";
-import { loginAction, LoginAction } from "../../actions/index";
+import { loginAction, LoginAction } from "./actions";
 
 export interface LoginState {
   isLoggedIn: boolean;

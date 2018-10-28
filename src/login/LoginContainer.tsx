@@ -2,8 +2,8 @@ import * as React from 'react';
 import { connect } from "react-redux";
 import { pure } from "recompose";
 import { bindActionCreators, Dispatch } from "redux";
-import { login } from "../actions";
 import { State } from "../reducers";
+import { login } from "./thunks";
 
 interface StateProps {
   isLoggedIn: boolean;
@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch,
   );
 
-const Login = pure(function Login({ login, isLoggedIn }: Props) {
+const LoginContainer = pure(function Login({ login, isLoggedIn }: Props) {
   console.log(login)
   if (isLoggedIn) {
     return (<div>Hello World</div>);
@@ -42,4 +42,4 @@ const Login = pure(function Login({ login, isLoggedIn }: Props) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Login);
+)(LoginContainer);
