@@ -1,17 +1,11 @@
 import { combineReducers } from "redux";
-import { LoginAction } from "../actions";
+import { login } from "../reducers/login";
+import { LoginState } from "./login";
 
-interface State {}
+export interface State {
+  login: LoginState;
+}
 
-const helloWorld = (state: State = {}, action: LoginAction) => {
-  switch(action.type) {
-    case 'LOGIN':
-      return state;
-    default:
-      return state;
-  }
-};
-
-export const reducers = combineReducers({
-  helloWorld,
+export default combineReducers<State>({
+  login,
 });

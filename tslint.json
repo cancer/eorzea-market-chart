@@ -15,6 +15,7 @@
     "interface-name": false,
     "eofline": false,
     "no-trailing-whitespace": false,
-    "no-shadowed-variable": false
+    "no-shadowed-variable": false,
+    "object-literal-sort-keys": false
   }
 }
