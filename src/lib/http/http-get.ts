@@ -1,4 +1,4 @@
-const get = (url: string): Promise<any> => {
+const get = <T>(url: string): Promise<T> => {
   const headers = new Headers({
     'Content-Type': 'application/json; charset=utf-8',
     'Access-Control-Allow-Origin': '*',
@@ -13,10 +13,10 @@ const get = (url: string): Promise<any> => {
   });
 };
 
-export const httpGet = (url: string, params: URLSearchParams | null | undefined): Promise<any> => {
+export const httpGet = <T>(url: string, params: URLSearchParams | null | undefined): Promise<T> => {
   if (!params) {
-    return get(url);
+    return get<T>(url);
   }
 
-  return get(`${url}?${params.toString()}`);
+  return get<T>(`${url}?${params.toString()}`);
 };

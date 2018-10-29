@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { compose, lifecycle, pure } from 'recompose';
 import { bindActionCreators, Dispatch } from 'redux';
 import { RootState } from '../reducers';
+import Chart from './ChartComponent';
 import { fetchHistory, HistoryRequest, ItemCategory } from "./thunks";
 
 interface StateProps {
@@ -38,7 +39,7 @@ const historyLifecycle = lifecycle<Props, {}>({
 });
 
 const HistoryContainer = function History(props: Props) {
-  return <div>{ JSON.stringify(props.result) }</div>;
+  return <Chart />;
 };
 
 const connector = connect(
