@@ -4,10 +4,11 @@ import { compose, lifecycle, pure } from 'recompose';
 import { bindActionCreators, Dispatch } from 'redux';
 import { RootState } from '../reducers';
 import Chart from './ChartComponent';
+import { Point } from "./reducers";
 import { fetchHistory, HistoryRequest, ItemCategory } from "./thunks";
 
 interface StateProps {
-  result: string;
+  chart: Point[];
 }
 
 interface DispatchProps {
@@ -18,7 +19,7 @@ type Props = StateProps & DispatchProps;
 
 const mapStateToProps = (state: RootState): StateProps => {
   return {
-    result: state.getHistory.result,
+    chart: state.getHistory.chart,
   } as StateProps;
 };
 
@@ -39,7 +40,7 @@ const historyLifecycle = lifecycle<Props, {}>({
 });
 
 const HistoryContainer = function History(props: Props) {
-  return <Chart />;
+  return <Chart data={props.chart} />;
 };
 
 const connector = connect(
