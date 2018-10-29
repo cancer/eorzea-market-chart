@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { loginByFirebase } from "../lib/login-by-firebase";
+import { loginByFirebase } from "../lib/firebase/login-by-firebase";
 import { loginAction, LoginAction } from "./actions";
 
 export const login = () => {
@@ -8,5 +8,5 @@ export const login = () => {
       .then(isLoggedIn => {
         dispatch(loginAction(isLoggedIn));
       });
-  }
+  };
 }

@@ -1,11 +1,13 @@
 import { combineReducers } from "redux";
-import { login } from "./login/reducers";
-import { LoginState } from "./login/reducers";
+import { getHistory, HistoryState } from "./history/reducers";
+import { login, LoginState } from "./login/reducers";
 
-export interface State {
+export interface RootState {
   login: LoginState;
+  getHistory: HistoryState;
 }
 
-export default combineReducers<State>({
+export default combineReducers<RootState>({
   login,
+  getHistory,
 });
