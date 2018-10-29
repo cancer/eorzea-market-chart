@@ -3,8 +3,8 @@ import { Dispatch } from "redux";
 import { httpGet } from "../lib/http/http-get";
 import { getItemInfoUrl } from "../lib/xivdb/get-url";
 import { getListUrlMock } from "../lib/xivmb/get-url";
-import { getList } from "./actions";
-import { ListActionTypes, ListState } from "./reducers";
+import { displayItemAction, getListAction, hideItemAction } from "./actions";
+import { ListActionTypes, ListItem } from "./reducers";
 
 interface ItemResponse {
   itemId: number;
@@ -28,7 +28,7 @@ interface InfoResponse {
 
 const dateFormat = 'YYYY/MM/DD hh:mm:ss';
 
-const adapt = (itemList: ItemResponse[], infoList: InfoResponse[]): ListState[] => {
+const adapt = (itemList: ItemResponse[], infoList: InfoResponse[]): ListItem[] => {
   return itemList.reduce((acc, item) => {
     const info = infoList.find(info => info.id === item.itemId);
     
@@ -43,7 +43,7 @@ const adapt = (itemList: ItemResponse[], infoList: InfoResponse[]): ListState[] 
       iconUrl: info.icon,
       lastUpdated: format(item.lastUpdated, dateFormat),
     });
-  }, [] as ListState[]);
+  }, [] as ListItem[]);
 };
 
 const fetchInfo = (ids: number[]): Promise<InfoResponse[]> => {
@@ -67,7 +67,19 @@ export const fetchList = () => {
       })
       .then(({itemResult, infoResult}) => adapt(itemResult, infoResult))
       .then(list => {
-        dispatch(getList(list));
+        dispatch(getListAction(list));
       });
+  };
+};
+
+export const displayItem = (id: number) => {
+  return (dispatch: Dispatch<ListActionTypes>) => {
+    dispatch(displayItemAction(id));
+  };
+};
+
+export const hideItem = () => {
+  return (dispatch: Dispatch<ListActionTypes>) => {
+    dispatch(hideItemAction());
   };
 }

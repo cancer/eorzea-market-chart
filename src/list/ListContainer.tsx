@@ -4,9 +4,9 @@ import { compose, lifecycle, pure } from 'recompose';
 import { bindActionCreators, Dispatch } from "redux";
 import { RootState } from "../reducers";
 import './ListContainer.css';
-import { fetchList } from "./thunks";
+import { displayItem, fetchList } from "./thunks";
 
-interface List {
+interface ListItem {
   id: number;
   lowestPrice: number;
   iconUrl: string;
@@ -15,27 +15,32 @@ interface List {
 }
 
 interface StateProps {
-  list: List[];
+  list: ListItem[];
 }
 
 interface DispatchProps {
   fetchList: () => void;
+  displayItem: (id: number) => void;
 }
 
 type Props = StateProps & DispatchProps;
 
 const mapStateToProps = (state: RootState) => ({
-  list: state.listStore,
+  list: state.listStore.list,
 } as StateProps);
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({
   fetchList,
+  displayItem,
 }, dispatch);
 
-const getListItem = ({ name, iconUrl, lowestPrice, lastUpdated }: List) => {
+const getListItem = ({ id, name, iconUrl, lowestPrice, lastUpdated }: ListItem, displayItem: (id: number) => void) => {
   return (
     <li className="ListItem">
-      <a href="" onClick={() => console.log('click')}>
+      <a href="" onClick={(e) => {
+        e.preventDefault();
+        displayItem(id)
+      }}>
         <div className="Name">{name}</div>
         <img className="Icon" src={iconUrl} alt={name} />
         <div className="Price">
@@ -51,7 +56,7 @@ const getListItem = ({ name, iconUrl, lowestPrice, lastUpdated }: List) => {
   )
 };
 
-const ListContainer = function List({ list }: Props) {
+const ListContainer = function List({ list, displayItem }: Props) {
   return (
     <ul className="List">
       <li className="ListItemHeader">
@@ -59,7 +64,7 @@ const ListContainer = function List({ list }: Props) {
         <div className="Price">最安値</div>
         <div className="Date">最終更新日</div>
       </li>
-      { list.map(item => getListItem(item)) }
+      { list.map(item => getListItem(item, displayItem)) }
     </ul>
   );
 };

@@ -3,7 +3,7 @@ import * as listActions from './actions';
 
 export type ListActionTypes = ActionType<typeof listActions>
 
-export interface ListState {
+export interface ListItem {
   id: number;
   lowestPrice: number;
   iconUrl: string;
@@ -11,20 +11,45 @@ export interface ListState {
   lastUpdated: string;
 }
 
-const initialState = [
-  {
-    id: 0,
-    lowestPrice: 0,
-    iconUrl: '',
-    name: '',
-    lastUpdated: '',
-  },
-];
+export interface ListState {
+  list: ListItem[];
+  displayId: number;
+  isDisplayItem: boolean;
+}
 
-export const listStore = (state: ListState[] = initialState, action: ListActionTypes) => {
+const initialState = {
+  list: [
+    {
+      id: 0,
+      lowestPrice: 0,
+      iconUrl: '',
+      name: '',
+      lastUpdated: '',
+    },
+  ],
+  displayId: 0,
+  isDisplayItem: false,
+};
+
+export const listStore = (state: ListState = initialState, action: ListActionTypes) => {
   switch (action.type) {
-    case getType(listActions.getList):
-      return action.payload;
+    case getType(listActions.getListAction):
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case getType(listActions.displayItemAction):
+      return {
+        ...state,
+        ...action.payload,
+        isDisplayItem: true,
+      };
+    case getType(listActions.hideItemAction):
+      return {
+        ...state,
+        displayId: 0,
+        isDisplayItem: false,
+      };
     default:
       return state;
   }

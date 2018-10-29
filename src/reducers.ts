@@ -6,7 +6,7 @@ import { login, LoginState } from "./login/reducers";
 export interface RootState {
   login: LoginState;
   getItem: ItemState;
-  listStore: ListState[];
+  listStore: ListState;
 }
 
 export default combineReducers<RootState>({
