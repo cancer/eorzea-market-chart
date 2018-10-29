@@ -1,0 +1,68 @@
+.List {
+    margin: 0 auto 0;
+    padding: 0 32px;
+}
+
+.ListItem,
+.ListItemHeader {
+    list-style: none;
+}
+
+.ListItem a,
+.ListItemHeader {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 60px 400px 140px auto;
+    grid-template-rows: 60px auto;
+    grid-template-areas: "icon name price date";
+    grid-column-gap: 16px;
+    padding: 16px 40px;
+    color: #a6e1ff;
+    border-top: 1px solid #7d8ba2;
+    text-decoration: none;
+}
+
+.ListItem a:hover {
+    background-color: rgba(228, 207, 56, 0.05);
+}
+
+.ListItemHeader {
+    grid-template-rows: 30px auto;
+}
+
+.ListItem .Name,
+.ListItemHeader .Name {
+    grid-area: name;
+    font-size: 20px;
+}
+
+.ListItem .Icon {
+    grid-area: icon;
+    width: 60px;
+    height: 60px;
+}
+
+.ListItem .Price,
+.ListItemHeader .Price {
+    grid-area: price;
+    font-size: 20px;
+}
+
+.ListItem .Date,
+.ListItemHeader .Date {
+    grid-area: date;
+    font-size: 20px;
+    color: #6ab0ce;
+}
+
+.NoData {
+    color: #788090;
+}
+
+.Unit {
+    color: #82a572;
+    margin-right: 10px;
+    font-size: 14px;
+}

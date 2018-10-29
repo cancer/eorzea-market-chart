@@ -1,19 +1,31 @@
 const get = <T>(url: string): Promise<T> => {
-  const headers = new Headers({
-    'Content-Type': 'application/json; charset=utf-8',
-    'Access-Control-Allow-Origin': '*',
-  });
   return new Promise((resolve, reject) => {
-    fetch(url, {
-      mode: 'cors',
-      headers,
-    })
-      .then(res => resolve(res.json()))
-      .catch(err => reject(err));
+    const xhr = new XMLHttpRequest();
+    const headers = {
+      'Content-Type': 'application/json; charset=utf-8',
+    };
+  
+    xhr.open('GET', url, true);
+  
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4) {
+        if (xhr.status >= 200 || xhr.status >= 300) {
+          resolve(JSON.parse(xhr.responseText));
+        }
+      
+        reject(new Error(xhr.statusText));
+      }
+    };
+  
+    Object.entries(headers).forEach(([key, value]) => {
+      xhr.setRequestHeader(key, value);
+    });
+  
+    xhr.send();
   });
 };
 
-export const httpGet = <T>(url: string, params: URLSearchParams | null | undefined): Promise<T> => {
+export const httpGet = <T>(url: string, params?: URLSearchParams): Promise<T> => {
   if (!params) {
     return get<T>(url);
   }

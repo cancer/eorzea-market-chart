@@ -1,7 +1,7 @@
 import { addDays, format, isWithinRange, startOfToday, subDays } from 'date-fns';
 import { Dispatch } from 'redux';
 import { httpGet } from '../lib/http/http-get';
-import { makeUrlMock } from '../lib/xivmb/get-url';
+import { getItemUrlMock } from '../lib/xivmb/get-url';
 import { makeQueryParams } from '../lib/xivmb/make-query-params';
 import { GetItemAction, getItemAction } from './actions';
 import { ItemHistory, ItemState } from './reducers';
@@ -68,7 +68,7 @@ const adapt = (res: ItemResponse[]): ItemState => {
 };
 
 export const fetchItem = (model: ItemRequest) => {
-  const url = makeUrlMock(model.serverName);
+  const url = getItemUrlMock(model.serverName);
   const category = model.category === 0 ? '' : String(model.category);
   const params = makeQueryParams(category, model.keyword);
 
