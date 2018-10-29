@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a03110f-a8e5-4ea6-bf3a-b4883a838062" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/history/ChartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/history/ChartComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/history/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/history/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/history/ChartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/item/ChartComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/history/HistoryContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/item/HistoryContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/history/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/item/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/history/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/item/reducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/history/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/item/thunks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="264">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -33,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChartComponent.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/history/ChartComponent.tsx">
+      <file leaf-file-name="ChartComponent.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/item/ChartComponent.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            <state relative-caret-position="216">
+              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -136,11 +137,11 @@
         <option value="$PROJECT_DIR$/src/history/actions.ts" />
         <option value="$PROJECT_DIR$/tslint.json" />
         <option value="$PROJECT_DIR$/src/history/reducers.ts" />
-        <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/history/thunks.ts" />
         <option value="$PROJECT_DIR$/src/history/ChartComponent.tsx" />
+        <option value="$PROJECT_DIR$/src/App.tsx" />
       </list>
     </option>
   </component>
@@ -205,7 +206,7 @@
               <item name="eorzea-market-chart" type="b2602c69:ProjectViewProjectNode" />
               <item name="eorzea-market-chart" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="history" type="462c0819:PsiDirectoryNode" />
+              <item name="item" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -268,11 +269,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60893000" />
+    <option name="totallyTimeSpent" value="61033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="33" width="1268" height="1557" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -543,7 +543,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/history/HistoryContainer.tsx">
+    <entry file="file://$PROJECT_DIR$/src/item/HistoryContainer.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
@@ -553,7 +553,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/history/actions.ts">
+    <entry file="file://$PROJECT_DIR$/src/item/actions.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
@@ -577,22 +577,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/history/reducers.ts">
+    <entry file="file://$PROJECT_DIR$/src/item/reducers.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -625,17 +615,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/history/thunks.ts">
+    <entry file="file://$PROJECT_DIR$/src/item/thunks.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
           <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/history/ChartComponent.tsx">
+    <entry file="file://$PROJECT_DIR$/src/item/ChartComponent.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        <state relative-caret-position="216">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

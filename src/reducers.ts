@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { getHistory, HistoryState } from "./history/reducers";
+import { getHistory, HistoryState } from "./item/reducers";
 import { login, LoginState } from "./login/reducers";
 
 export interface RootState {
