@@ -10,12 +10,12 @@ interface Props {
 export default pure(function Chart({ data }: Props) {
   return (
     <div>
-      <LineChart width={500} height={300} data={data} margin={{top: 15, left: 15}}>
+      <LineChart width={1200} height={800} data={data} margin={{top: 15, left: 15, right: 15, bottom: 15}}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="label" />
-        <YAxis />
-        <Line type="monotone" dataKey="lower" stroke="#8884d8" />
-        <Line type="monotone" dataKey="average" stroke="#8884d8" />
+        <XAxis dataKey="label" stroke="#fff" />
+        <YAxis stroke="#fff" />
+        <Line type="linear" dataKey="lower" stroke="#35f6ff" />
+        <Line type="linear" dataKey="average" stroke="#ff25a8" />
         <Legend />
       </LineChart>
     </div>

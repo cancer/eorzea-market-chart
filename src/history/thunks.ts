@@ -52,7 +52,7 @@ const makePoint = (date_: Date, prices: number[]): Point => {
 };
 
 const adapt = (res: HistoryResponse[]): HistoryState => {
-  const dates = makeDates(20);
+  const dates = makeDates(30);
 
   const chart = dates.map(date => {
     const prices = res
