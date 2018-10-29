@@ -1,8 +1,8 @@
-import { ActionType, createAction } from "typesafe-actions";
-import { HistoryState } from "./reducers";
+import { ActionType, createAction } from 'typesafe-actions';
+import { ItemState } from './reducers';
 
-export const getHistoryAction = createAction('HISTORY_GET', resolve => {
-  return (value: HistoryState) => resolve(value);
+export const getItemAction = createAction('ITEM_GET', resolve => {
+  return (value: ItemState) => resolve(value);
 });
 
-export type GetHistoryAction = ActionType<typeof getHistoryAction>;
+export type GetItemAction = ActionType<typeof getItemAction>;
