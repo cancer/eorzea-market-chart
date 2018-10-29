@@ -1,10 +1,10 @@
 import * as React from "react";
 import { CartesianGrid, Legend, Line, LineChart, XAxis, YAxis } from "recharts";
 import { pure } from "recompose";
-import { PriceHistory } from "./reducers";
+import { Point } from "./reducers";
 
 interface Props {
-  data: PriceHistory[];
+  data: Point[];
 }
 
 export default pure(function Chart({ data }: Props) {

@@ -1,19 +1,19 @@
 import { getType } from 'typesafe-actions';
-import { getItemAction, GetItemAction } from './actions';
+import { getHistoryAction, GetHistoryAction } from './actions';
 
-export interface PriceHistory {
+export interface Point {
   date: number;
   lower?: number;
   average?: number;
   label: string;
 }
 
-export interface ItemState {
-  histories: PriceHistory[]
+export interface HistoryState {
+  chart: Point[]
 }
 
 const initialState = {
-  histories: [{
+  chart: [{
     date: Date.now(),
     lower: 0,
     average: 0,
@@ -21,9 +21,9 @@ const initialState = {
   }],
 };
 
-export const getItem = (state: ItemState = initialState, action: GetItemAction) => {
+export const getHistory = (state: HistoryState = initialState, action: GetHistoryAction) => {
   switch (action.type) {
-    case getType(getItemAction):
+    case getType(getHistoryAction):
       return {
         ...state,
         ...action.payload,

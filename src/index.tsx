@@ -1,50 +1,20 @@
-import { connectRouter, routerMiddleware } from 'connected-react-router';
-import createBrowserHistory from "history/createBrowserHistory";
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import { applyMiddleware, compose, createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import App from "./App";
+import App from './App';
 import './index.css';
-import rootReducer from './reducers';
+import reducers from './reducers';
 
-const history = createBrowserHistory();
+const middleWare = [thunk, createLogger()];
 
-const middleWare = [
-  thunk,
-  createLogger(),
-  routerMiddleware(history),
-];
+const store = createStore(reducers, applyMiddleware(...middleWare));
 
-const store = createStore(
-  connectRouter(history)(rootReducer),
-  compose(
-    applyMiddleware(...middleWare),
-  ),
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root') as HTMLElement,
 );
-
-const render = () => {
-  ReactDOM.render(
-    <AppContainer>
-      <Provider store={store}>
-        <App history={history} />
-      </Provider>
-    </AppContainer>,
-    document.getElementById('root') as HTMLElement,
-  );
-};
-
-if (module.hot) {
-  module.hot.accept('./App', () => {
-    console.log('accept')
-    render();
-  });
-  
-  module.hot.accept('./reducers', () => {
-    console.log('accept reducers')
-    store.replaceReducer(connectRouter(history)(rootReducer));
-  });
-}
