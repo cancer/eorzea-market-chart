@@ -4,43 +4,43 @@ import { compose, lifecycle, pure } from 'recompose';
 import { bindActionCreators, Dispatch } from 'redux';
 import { RootState } from '../reducers';
 import Chart from './ChartComponent';
-import { Point } from "./reducers";
-import { fetchHistory, HistoryRequest, ItemCategory } from "./thunks";
+import { ItemHistory } from "./reducers";
+import { fetchItem, ItemCategory, ItemRequest } from "./thunks";
 
 interface StateProps {
-  chart: Point[];
+  histories: ItemHistory[];
 }
 
 interface DispatchProps {
-  fetchHistory: (model: HistoryRequest) => void;
+  fetchItem: (model: ItemRequest) => void;
 }
 
 type Props = StateProps & DispatchProps;
 
 const mapStateToProps = (state: RootState): StateProps => {
   return {
-    chart: state.getHistory.chart,
+    histories: state.getItem.histories,
   } as StateProps;
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({
-    fetchHistory,
+    fetchItem,
   }, dispatch);
 
-const historyLifecycle = lifecycle<Props, {}>({
+const itemLifecycle = lifecycle<Props, {}>({
   componentDidMount() {
     const model = {
       serverName: 'Tonberry',
       category: ItemCategory.All,
       keyword: '',
     };
-    this.props.fetchHistory(model);
+    this.props.fetchItem(model);
   }
 });
 
-const HistoryContainer = function History(props: Props) {
-  return <Chart data={props.chart} />;
+const ItemContainer = function Item(props: Props) {
+  return <Chart data={props.histories} />;
 };
 
 const connector = connect(
@@ -50,6 +50,6 @@ const connector = connect(
 
 export default compose<Props, {}>(
   connector,
-  historyLifecycle,
+  itemLifecycle,
   pure,
-)(HistoryContainer);
+)(ItemContainer);

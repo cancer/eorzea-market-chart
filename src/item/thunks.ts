@@ -3,20 +3,20 @@ import { Dispatch } from 'redux';
 import { httpGet } from '../lib/http/http-get';
 import { makeUrlMock } from '../lib/xivmb/get-url';
 import { makeQueryParams } from '../lib/xivmb/make-query-params';
-import { GetHistoryAction, getHistoryAction } from './actions';
-import { HistoryState, Point } from './reducers';
+import { GetItemAction, getItemAction } from './actions';
+import { ItemHistory, ItemState } from './reducers';
 
 export enum ItemCategory {
   All,
 }
 
-export interface HistoryRequest {
+export interface ItemRequest {
   serverName: string;
   keyword: string;
   category: ItemCategory;
 }
 
-interface HistoryResponse {
+interface ItemResponse {
   price: string;
   quontity: number;
   total: string;
@@ -35,7 +35,7 @@ const makeDates = (days: number): Date[] => {
     .reverse();
 };
 
-const makePoint = (date_: Date, prices: number[]): Point => {
+const makePoint = (date_: Date, prices: number[]): ItemHistory => {
   const date = date_.getTime();
 
   if (prices.length < 1) {
@@ -51,10 +51,10 @@ const makePoint = (date_: Date, prices: number[]): Point => {
   return { date, lower, average, label: format(date, dateFormat) };
 };
 
-const adapt = (res: HistoryResponse[]): HistoryState => {
+const adapt = (res: ItemResponse[]): ItemState => {
   const dates = makeDates(30);
 
-  const chart = dates.map(date => {
+  const histories = dates.map(date => {
     const prices = res
       .filter(v => {
         return isWithinRange(v.date, date, addDays(date, 1));
@@ -64,19 +64,19 @@ const adapt = (res: HistoryResponse[]): HistoryState => {
     return makePoint(date, prices);
   });
 
-  return { chart };
+  return { histories };
 };
 
-export const fetchHistory = (model: HistoryRequest) => {
+export const fetchItem = (model: ItemRequest) => {
   const url = makeUrlMock(model.serverName);
   const category = model.category === 0 ? '' : String(model.category);
   const params = makeQueryParams(category, model.keyword);
 
-  return (dispatch: Dispatch<GetHistoryAction>) => {
-    httpGet<HistoryResponse[]>(url, params)
+  return (dispatch: Dispatch<GetItemAction>) => {
+    httpGet<ItemResponse[]>(url, params)
       .then(result => adapt(result))
       .then(value => {
-        dispatch(getHistoryAction(value));
+        dispatch(getItemAction(value));
       });
   };
 };
