@@ -52,7 +52,7 @@ const getListItem = (
   addFav: (id: number) => void,
 ) => {
   return (
-    <li className="ListItem">
+    <li key={id} className="ListItem">
       <a
         href=""
         onClick={e => {

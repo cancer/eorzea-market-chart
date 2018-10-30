@@ -98,9 +98,9 @@ export const addFav = (id: number) => {
   const favs = getStoredFavs();
   
   if (favs.includes(id)) {
-    return () => {};
+    return getFavs();
   }
   
   localStorage.setItem('favs', JSON.stringify(favs.concat(id)));
-  return () => {};
+  return getFavs();
 };
