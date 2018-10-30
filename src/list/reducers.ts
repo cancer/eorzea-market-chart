@@ -15,6 +15,7 @@ export interface ListState {
   list: ListItem[];
   displayId: number;
   isDisplayItem: boolean;
+  favs: number[];
 }
 
 const initialState = {
@@ -29,6 +30,7 @@ const initialState = {
   ],
   displayId: 0,
   isDisplayItem: false,
+  favs: [],
 };
 
 export const listStore = (state: ListState = initialState, action: ListActionTypes) => {
@@ -49,6 +51,11 @@ export const listStore = (state: ListState = initialState, action: ListActionTyp
         ...state,
         displayId: 0,
         isDisplayItem: false,
+      };
+    case getType(listActions.getFavAction):
+      return {
+        ...state,
+        ...action.payload,
       };
     default:
       return state;

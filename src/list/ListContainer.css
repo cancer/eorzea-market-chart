@@ -14,9 +14,9 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: 60px 400px 140px auto;
+    grid-template-columns: 60px 60px 400px 140px auto;
     grid-template-rows: 60px auto;
-    grid-template-areas: "icon name price date";
+    grid-template-areas: "fav icon name price date";
     grid-column-gap: 16px;
     padding: 16px 40px;
     color: #a6e1ff;
@@ -36,6 +36,29 @@
 .ListItemHeader .Name {
     grid-area: name;
     font-size: 20px;
+}
+
+.ListItem .Fav {
+    grid-area: fav;
+    width: 60px;
+    height: 60px;
+}
+
+.ListItem .Fav button {
+    background: transparent;
+    border: none;
+    line-height: 60px;
+    width: 60px;
+    font-size: 24px;
+}
+
+.ListItem .Fav .Disabled {
+    color: #656f7d;
+}
+
+.ListItem .Fav button:hover,
+.ListItem .Fav .Enabled {
+    color: #d8a816;
 }
 
 .ListItem .Icon {

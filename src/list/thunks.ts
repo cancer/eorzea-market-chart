@@ -3,7 +3,7 @@ import { Dispatch } from "redux";
 import { httpGet } from "../lib/http/http-get";
 import { getItemInfoUrl } from "../lib/xivdb/get-url";
 import { getListUrlMock } from "../lib/xivmb/get-url";
-import { displayItemAction, getListAction, hideItemAction } from "./actions";
+import { displayItemAction, getFavAction, getListAction, hideItemAction } from "./actions";
 import { ListActionTypes, ListItem } from "./reducers";
 
 interface ItemResponse {
@@ -82,4 +82,25 @@ export const hideItem = () => {
   return (dispatch: Dispatch<ListActionTypes>) => {
     dispatch(hideItemAction());
   };
+};
+
+const getStoredFavs = (): number[] => {
+  return JSON.parse(localStorage.getItem('favs') || '[]');
+};
+
+export const getFavs = () => {
+  return (dispatch: Dispatch<ListActionTypes>) => {
+    dispatch(getFavAction(getStoredFavs()));
+  };
 }
+
+export const addFav = (id: number) => {
+  const favs = getStoredFavs();
+  
+  if (favs.includes(id)) {
+    return () => {};
+  }
+  
+  localStorage.setItem('favs', JSON.stringify(favs.concat(id)));
+  return () => {};
+};

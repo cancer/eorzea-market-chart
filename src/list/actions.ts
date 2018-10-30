@@ -12,3 +12,7 @@ export const displayItemAction = createAction('DISPLAY_ITEM', resolve => {
 export const hideItemAction = createAction('HIDE_ITEM', resolve => {
   return () => resolve();
 });
+
+export const getFavAction = createAction('GET_FAV_ITEMS', resolve => {
+  return (favs: number[]) => resolve({ favs } as ListState);
+});
