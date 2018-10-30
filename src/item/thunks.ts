@@ -1,10 +1,12 @@
 import { addDays, format, isWithinRange, startOfToday, subDays } from 'date-fns';
 import { Dispatch } from 'redux';
 import { httpGet } from '../lib/http/http-get';
+import { getItemInfoUrl } from "../lib/xivdb/get-url";
 import { getItemUrlMock } from '../lib/xivmb/get-url';
 import { makeQueryParams } from '../lib/xivmb/make-query-params';
-import { GetItemAction, getItemAction } from './actions';
-import { ItemHistory, ItemState } from './reducers';
+import { InfoResponse } from "../list/thunks";
+import { getInfoAction, getItemAction } from './actions';
+import { ItemActionTypes, ItemHistory } from './reducers';
 
 export enum ItemCategory {
   All,
@@ -51,7 +53,7 @@ const makePoint = (date_: Date, prices: number[]): ItemHistory => {
   return { date, lower, average, label: format(date, dateFormat) };
 };
 
-const adapt = (res: ItemResponse[]): ItemState => {
+const adaptItemHistory = (res: ItemResponse[]): ItemHistory[] => {
   const dates = makeDates(30);
 
   const histories = dates.map(date => {
@@ -64,19 +66,44 @@ const adapt = (res: ItemResponse[]): ItemState => {
     return makePoint(date, prices);
   });
 
-  return { histories };
+  return histories;
 };
 
-export const fetchItem = (model: ItemRequest) => {
+export const fetchItemHistory = (model: ItemRequest) => {
   const url = getItemUrlMock(model.serverName);
   const category = model.category === 0 ? '' : String(model.category);
   const params = makeQueryParams(category, model.keyword);
 
-  return (dispatch: Dispatch<GetItemAction>) => {
+  return (dispatch: Dispatch<ItemActionTypes>) => {
     httpGet<ItemResponse[]>(url, params)
-      .then(result => adapt(result))
+      .then(result => adaptItemHistory(result))
       .then(value => {
         dispatch(getItemAction(value));
       });
   };
 };
+
+export interface AdaptedInfo {
+  iconUrl: string;
+  name: string;
+}
+
+const adaptInfo = (res: InfoResponse): AdaptedInfo => {
+  return {
+    name: res.name_ja,
+    iconUrl: res.icon,
+  };
+};
+
+export const fetchItemInfo = (id: number) => {
+  const url = getItemInfoUrl(id);
+  
+  return (dispatch: Dispatch<ItemActionTypes>) => {
+    httpGet<InfoResponse>(url)
+      .then(result => adaptInfo(result))
+      .then(value => {
+        dispatch(getInfoAction(value));
+      });
+  };
+};
+

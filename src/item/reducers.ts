@@ -1,5 +1,7 @@
-import { getType } from 'typesafe-actions';
-import { getItemAction, GetItemAction } from './actions';
+import { ActionType, getType } from 'typesafe-actions';
+import * as itemActions from './actions';
+
+export type ItemActionTypes = ActionType<typeof itemActions>;
 
 export interface ItemHistory {
   date: number;
@@ -9,10 +11,14 @@ export interface ItemHistory {
 }
 
 export interface ItemState {
+  name: string;
+  iconUrl: string;
   histories: ItemHistory[]
 }
 
 const initialState = {
+  name: '',
+  iconUrl: '',
   histories: [{
     date: Date.now(),
     lower: 0,
@@ -21,9 +27,14 @@ const initialState = {
   }],
 };
 
-export const getItem = (state: ItemState = initialState, action: GetItemAction) => {
+export const itemStore = (state: ItemState = initialState, action: ItemActionTypes) => {
   switch (action.type) {
-    case getType(getItemAction):
+    case getType(itemActions.getItemAction):
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case getType(itemActions.getInfoAction):
       return {
         ...state,
         ...action.payload,

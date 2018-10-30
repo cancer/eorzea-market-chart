@@ -20,7 +20,7 @@ interface ItemResponse {
   lastUpdated: string;
 }
 
-interface InfoResponse {
+export interface InfoResponse {
   id: number;
   icon: string;
   name_ja: string;

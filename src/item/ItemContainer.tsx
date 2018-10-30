@@ -2,19 +2,23 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { compose, lifecycle, pure } from 'recompose';
 import { bindActionCreators, Dispatch } from 'redux';
-import { hideItem } from "../list/thunks";
+import { hideItem } from '../list/thunks';
 import { RootState } from '../reducers';
 import Chart from './ChartComponent';
-import './ItemContainer.css'
-import { ItemHistory } from "./reducers";
-import { fetchItem, ItemCategory, ItemRequest } from "./thunks";
+import './ItemContainer.css';
+import { ItemHistory } from './reducers';
+import { fetchItemHistory, fetchItemInfo, ItemCategory, ItemRequest } from './thunks';
 
 interface StateProps {
   histories: ItemHistory[];
+  id: number;
+  name: string;
+  iconUrl: string;
 }
 
 interface DispatchProps {
-  fetchItem: (model: ItemRequest) => void;
+  fetchItemHistory: (model: ItemRequest) => void;
+  fetchItemInfo: (id: number) => void;
   hideItem: () => void;
 }
 
@@ -22,15 +26,22 @@ type Props = StateProps & DispatchProps;
 
 const mapStateToProps = (state: RootState): StateProps => {
   return {
-    histories: state.getItem.histories,
+    histories: state.itemStore.histories,
+    id: state.listStore.displayId,
+    name: state.itemStore.name,
+    iconUrl: state.itemStore.iconUrl,
   } as StateProps;
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({
-    fetchItem,
-    hideItem,
-  }, dispatch);
+  bindActionCreators(
+    {
+      fetchItemHistory,
+      fetchItemInfo,
+      hideItem,
+    },
+    dispatch,
+  );
 
 const itemLifecycle = lifecycle<Props, {}>({
   componentDidMount() {
@@ -39,15 +50,51 @@ const itemLifecycle = lifecycle<Props, {}>({
       category: ItemCategory.All,
       keyword: '',
     };
-    this.props.fetchItem(model);
-  }
+    this.props.fetchItemHistory(model);
+    this.props.fetchItemInfo(this.props.id);
+  },
 });
 
 const ItemContainer = function Item(props: Props) {
+  const latest = props.histories[props.histories.length - 1];
   return (
     <div className="Item">
-      <Chart data={props.histories} />
-      <button className="Close" onClick={() => props.hideItem()}>x close</button>
+      <div className="ItemInner">
+        <h2 className="Name">{props.name}</h2>
+        <img className="Icon" src={props.iconUrl} />
+        <div className="PriceData">
+          <div className="Lowest">
+            前日最安値:
+            {latest.lower ? (
+              <>
+                <span className="Unit">Gil</span>
+                <span className="Price">latest.lower</span>
+              </>
+            ) : (
+              <span className="NoData">No Data</span>
+            )}
+          </div>
+          <div className="Average">
+            前日平均額:
+            {latest.average ? (
+              <>
+                <span className="Unit">Gil</span>
+                <span className="Price">latest.average</span>
+              </>
+            ) : (
+              <span className="NoData">No Data</span>
+            )}
+          </div>
+        </div>
+        <div className="Chart">
+          <Chart data={props.histories} />
+        </div>
+        <div className="Footer">
+          <button className="Close" onClick={() => props.hideItem()}>
+            x close
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

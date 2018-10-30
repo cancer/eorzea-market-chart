@@ -1,8 +1,11 @@
-import { ActionType, createAction } from "typesafe-actions";
-import { ItemState } from "./reducers";
+import { createAction } from "typesafe-actions";
+import { ItemHistory, ItemState } from "./reducers";
+import { AdaptedInfo } from "./thunks";
 
 export const getItemAction = createAction('ITEM_GET', resolve => {
-  return (value: ItemState) => resolve(value);
+  return (histories: ItemHistory[]) => resolve({ histories } as ItemState);
 });
 
-export type GetItemAction = ActionType<typeof getItemAction>;
+export const getInfoAction = createAction('INFO_GET', resolve => {
+  return ({ iconUrl, name }: AdaptedInfo) => resolve({ iconUrl, name } as ItemState);
+});

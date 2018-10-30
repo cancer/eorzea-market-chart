@@ -5,9 +5,58 @@
     left: 0;
     right: 0;
     background: rgba(76, 82, 99, 0.9);
+    padding: 0 40px;
+    color: #a6e1ff;
 }
 
-.Close {
+.ItemInner {
+    display: grid;
+    grid-template-columns: 216px 250px auto;
+    grid-template-rows: 76px 76px 800px auto;
+    grid-template-areas: "icon name"
+    "icon price"
+    "chart chart"
+    "footer footer";
+    grid-column-gap: 16px;
+}
+
+.ItemInner .Icon {
+    grid-area: icon;
+    padding-left: 70px;
+}
+
+.ItemInner .Name {
+    grid-area: name;
+}
+
+.ItemInner .PriceData {
+    grid-area: price;
+}
+
+.ItemInner .PriceData .Lowest {
+    color: #3fedf5;
+    padding-top: 4px;
+}
+
+.ItemInner .PriceData .Average {
+    color: #f133a5;
+    padding-top: 4px;
+}
+
+.ItemInner .PriceData .Unit,
+.ItemInner .PriceData .NoData {
+    margin-left: 8px;
+}
+
+.ItemInner .Chart {
+    grid-area: chart;
+}
+
+.ItemInner .Footer {
+    grid-area: footer;
+}
+
+.ItemInner .Close {
     background: transparent;
     border: none;
     color: #fff;

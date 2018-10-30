@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CartesianGrid, Legend, Line, LineChart, XAxis, YAxis } from "recharts";
+import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
 import { pure } from "recompose";
 import { ItemHistory } from "./reducers";
 
@@ -17,6 +17,7 @@ export default pure(function Chart({ data }: Props) {
         <Line type="linear" dataKey="lower" stroke="#35f6ff" />
         <Line type="linear" dataKey="average" stroke="#ff25a8" />
         <Legend />
+        <Tooltip />
       </LineChart>
     </div>
   );
