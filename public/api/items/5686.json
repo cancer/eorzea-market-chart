@@ -1,0 +1,872 @@
+[
+  {
+    "price": 898,
+    "quantity": 10,
+    "total": 8980,
+    "date": "2018-10-29 19:53:26"
+  },
+  {
+    "price": 889,
+    "quantity": 3,
+    "total": 2667,
+    "date": "2018-10-29 19:53:24"
+  },
+  {
+    "price": 870,
+    "quantity": 1,
+    "total": 870,
+    "date": "2018-10-29 19:53:22"
+  },
+  {
+    "price": 1000,
+    "quantity": 1,
+    "total": 1000,
+    "date": "2018-10-28 19:58:28"
+  },
+  {
+    "price": 1000,
+    "quantity": 1,
+    "total": 1000,
+    "date": "2018-10-28 19:58:26"
+  },
+  {
+    "price": 800,
+    "quantity": 1,
+    "total": 800,
+    "date": "2018-10-28 19:58:25"
+  },
+  {
+    "price": 700,
+    "quantity": 1,
+    "total": 700,
+    "date": "2018-10-28 19:58:23"
+  },
+  {
+    "price": 598,
+    "quantity": 1,
+    "total": 598,
+    "date": "2018-10-28 19:58:20"
+  },
+  {
+    "price": 198,
+    "quantity": 1,
+    "total": 198,
+    "date": "2018-10-28 19:58:19"
+  },
+  {
+    "price": 760,
+    "quantity": 1,
+    "total": 760,
+    "date": "2018-10-28 11:03:03"
+  },
+  {
+    "price": 800,
+    "quantity": 5,
+    "total": 4000,
+    "date": "2018-10-28 11:03:02"
+  },
+  {
+    "price": 760,
+    "quantity": 2,
+    "total": 1520,
+    "date": "2018-10-28 11:02:55"
+  },
+  {
+    "price": 693,
+    "quantity": 24,
+    "total": 16632,
+    "date": "2018-10-27 21:35:26"
+  },
+  {
+    "price": 692,
+    "quantity": 3,
+    "total": 2076,
+    "date": "2018-10-27 21:35:25"
+  },
+  {
+    "price": 678,
+    "quantity": 1,
+    "total": 678,
+    "date": "2018-10-27 21:35:23"
+  },
+  {
+    "price": 650,
+    "quantity": 6,
+    "total": 3900,
+    "date": "2018-10-27 21:35:21"
+  },
+  {
+    "price": 750,
+    "quantity": 1,
+    "total": 750,
+    "date": "2018-10-24 18:29:58"
+  },
+  {
+    "price": 1000,
+    "quantity": 2,
+    "total": 2000,
+    "date": "2018-10-24 18:29:56"
+  },
+  {
+    "price": 900,
+    "quantity": 2,
+    "total": 1800,
+    "date": "2018-10-24 18:29:53"
+  },
+  {
+    "price": 1000,
+    "quantity": 3,
+    "total": 3000,
+    "date": "2018-10-23 7:52:44"
+  },
+  {
+    "price": 1000,
+    "quantity": 3,
+    "total": 3000,
+    "date": "2018-10-23 7:52:42"
+  },
+  {
+    "price": 999,
+    "quantity": 1,
+    "total": 999,
+    "date": "2018-10-21 19:39:31"
+  },
+  {
+    "price": 998,
+    "quantity": 6,
+    "total": 5988,
+    "date": "2018-10-21 19:39:29"
+  },
+  {
+    "price": 2000,
+    "quantity": 68,
+    "total": 136000,
+    "date": "2018-09-30 17:07:01"
+  },
+  {
+    "price": 2300,
+    "quantity": 20,
+    "total": 46000,
+    "date": "2018-09-29 19:57:17"
+  },
+  {
+    "price": 2050,
+    "quantity": 1,
+    "total": 2050,
+    "date": "2018-09-29 18:44:17"
+  },
+  {
+    "price": 2010,
+    "quantity": 19,
+    "total": 38190,
+    "date": "2018-09-29 18:44:15"
+  },
+  {
+    "price": 1800,
+    "quantity": 1,
+    "total": 1800,
+    "date": "2018-09-29 18:44:05"
+  },
+  {
+    "price": 1800,
+    "quantity": 1,
+    "total": 1800,
+    "date": "2018-09-29 18:44:03"
+  },
+  {
+    "price": 1800,
+    "quantity": 7,
+    "total": 12600,
+    "date": "2018-09-29 18:44:02"
+  },
+  {
+    "price": 1598,
+    "quantity": 10,
+    "total": 15980,
+    "date": "2018-09-29 18:38:01"
+  },
+  {
+    "price": 1598,
+    "quantity": 11,
+    "total": 17578,
+    "date": "2018-09-29 18:37:58"
+  },
+  {
+    "price": 2100,
+    "quantity": 32,
+    "total": 67200,
+    "date": "2018-09-29 11:28:39"
+  },
+  {
+    "price": 2000,
+    "quantity": 1,
+    "total": 2000,
+    "date": "2018-09-29 7:58:23"
+  },
+  {
+    "price": 2000,
+    "quantity": 2,
+    "total": 4000,
+    "date": "2018-09-29 7:58:22"
+  },
+  {
+    "price": 1700,
+    "quantity": 2,
+    "total": 3400,
+    "date": "2018-09-28 20:56:19"
+  },
+  {
+    "price": 1700,
+    "quantity": 2,
+    "total": 3400,
+    "date": "2018-09-28 20:56:13"
+  },
+  {
+    "price": 1800,
+    "quantity": 1,
+    "total": 1800,
+    "date": "2018-09-28 20:40:28"
+  },
+  {
+    "price": 1800,
+    "quantity": 8,
+    "total": 14400,
+    "date": "2018-09-28 20:22:25"
+  },
+  {
+    "price": 1700,
+    "quantity": 1,
+    "total": 1700,
+    "date": "2018-09-28 16:08:06"
+  },
+  {
+    "price": 1400,
+    "quantity": 1,
+    "total": 1400,
+    "date": "2018-09-28 16:08:03"
+  },
+  {
+    "price": 1500,
+    "quantity": 2,
+    "total": 3000,
+    "date": "2018-09-28 16:04:26"
+  },
+  {
+    "price": 1399,
+    "quantity": 24,
+    "total": 33576,
+    "date": "2018-09-28 16:04:15"
+  },
+  {
+    "price": 2198,
+    "quantity": 3,
+    "total": 6594,
+    "date": "2018-08-30 5:13:34"
+  },
+  {
+    "price": 2198,
+    "quantity": 3,
+    "total": 6594,
+    "date": "2018-08-30 5:13:33"
+  },
+  {
+    "price": 2198,
+    "quantity": 3,
+    "total": 6594,
+    "date": "2018-08-30 5:13:31"
+  },
+  {
+    "price": 2198,
+    "quantity": 3,
+    "total": 6594,
+    "date": "2018-08-30 5:11:39"
+  },
+  {
+    "price": 2198,
+    "quantity": 3,
+    "total": 6594,
+    "date": "2018-08-30 5:11:37"
+  },
+  {
+    "price": 2198,
+    "quantity": 3,
+    "total": 6594,
+    "date": "2018-08-30 5:11:36"
+  },
+  {
+    "price": 2198,
+    "quantity": 3,
+    "total": 6594,
+    "date": "2018-08-30 5:11:35"
+  },
+  {
+    "price": 2198,
+    "quantity": 3,
+    "total": 6594,
+    "date": "2018-08-30 5:11:33"
+  },
+  {
+    "price": 2198,
+    "quantity": 3,
+    "total": 6594,
+    "date": "2018-08-30 5:11:32"
+  },
+  {
+    "price": 2198,
+    "quantity": 3,
+    "total": 6594,
+    "date": "2018-08-30 5:10:24"
+  },
+  {
+    "price": 2198,
+    "quantity": 3,
+    "total": 6594,
+    "date": "2018-08-30 5:10:23"
+  },
+  {
+    "price": 2000,
+    "quantity": 1,
+    "total": 2000,
+    "date": "2018-08-30 5:10:21"
+  },
+  {
+    "price": 2000,
+    "quantity": 1,
+    "total": 2000,
+    "date": "2018-08-30 5:10:20"
+  },
+  {
+    "price": 2000,
+    "quantity": 1,
+    "total": 2000,
+    "date": "2018-08-30 5:10:19"
+  },
+  {
+    "price": 1980,
+    "quantity": 5,
+    "total": 9900,
+    "date": "2018-08-29 15:05:44"
+  },
+  {
+    "price": 2000,
+    "quantity": 1,
+    "total": 2000,
+    "date": "2018-08-28 23:08:27"
+  },
+  {
+    "price": 1990,
+    "quantity": 1,
+    "total": 1990,
+    "date": "2018-08-28 19:52:31"
+  },
+  {
+    "price": 1970,
+    "quantity": 1,
+    "total": 1970,
+    "date": "2018-08-28 19:52:30"
+  },
+  {
+    "price": 1970,
+    "quantity": 1,
+    "total": 1970,
+    "date": "2018-08-28 19:52:28"
+  },
+  {
+    "price": 1960,
+    "quantity": 1,
+    "total": 1960,
+    "date": "2018-08-28 19:52:26"
+  },
+  {
+    "price": 998,
+    "quantity": 1,
+    "total": 998,
+    "date": "2018-05-24 21:48:41"
+  },
+  {
+    "price": 1000,
+    "quantity": 1,
+    "total": 1000,
+    "date": "2018-05-23 22:22:25"
+  },
+  {
+    "price": 999,
+    "quantity": 21,
+    "total": 20979,
+    "date": "2018-05-23 22:22:24"
+  },
+  {
+    "price": 1000,
+    "quantity": 5,
+    "total": 5000,
+    "date": "2018-05-23 22:22:24"
+  },
+  {
+    "price": 998,
+    "quantity": 1,
+    "total": 998,
+    "date": "2018-05-23 22:22:22"
+  },
+  {
+    "price": 1198,
+    "quantity": 1,
+    "total": 1198,
+    "date": "2018-05-23 20:13:35"
+  },
+  {
+    "price": 1400,
+    "quantity": 3,
+    "total": 4200,
+    "date": "2018-05-21 3:34:34"
+  },
+  {
+    "price": 1394,
+    "quantity": 1,
+    "total": 1394,
+    "date": "2018-05-21 3:34:32"
+  },
+  {
+    "price": 1294,
+    "quantity": 4,
+    "total": 5176,
+    "date": "2018-05-21 3:34:31"
+  },
+  {
+    "price": 1293,
+    "quantity": 1,
+    "total": 1293,
+    "date": "2018-05-21 3:34:29"
+  },
+  {
+    "price": 1293,
+    "quantity": 1,
+    "total": 1293,
+    "date": "2018-05-21 3:34:27"
+  },
+  {
+    "price": 1600,
+    "quantity": 26,
+    "total": 41600,
+    "date": "2018-05-19 14:17:52"
+  },
+  {
+    "price": 1600,
+    "quantity": 3,
+    "total": 4800,
+    "date": "2018-05-19 14:13:40"
+  },
+  {
+    "price": 1400,
+    "quantity": 19,
+    "total": 26600,
+    "date": "2018-05-19 14:13:38"
+  },
+  {
+    "price": 900,
+    "quantity": 2,
+    "total": 1800,
+    "date": "2018-05-19 14:01:59"
+  },
+  {
+    "price": 900,
+    "quantity": 2,
+    "total": 1800,
+    "date": "2018-05-19 14:01:58"
+  },
+  {
+    "price": 900,
+    "quantity": 2,
+    "total": 1800,
+    "date": "2018-05-19 14:01:57"
+  },
+  {
+    "price": 900,
+    "quantity": 2,
+    "total": 1800,
+    "date": "2018-05-19 14:01:56"
+  },
+  {
+    "price": 900,
+    "quantity": 2,
+    "total": 1800,
+    "date": "2018-05-19 14:01:55"
+  },
+  {
+    "price": 900,
+    "quantity": 2,
+    "total": 1800,
+    "date": "2018-05-19 14:01:54"
+  },
+  {
+    "price": 1,
+    "quantity": 33500,
+    "total": "2018-05-26 15:41:49",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-26 15:03:41",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 16000,
+    "total": "2018-05-26 14:48:37",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-26 12:45:17",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-26 12:44:15",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 16000,
+    "total": "2018-05-26 10:28:28",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-25 22:31:21",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 18039,
+    "total": "2018-05-25 19:46:48",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-25 17:57:17",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-25 9:40:19",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-25 6:55:53",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-25 1:16:52",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-25 0:51:20",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 16000,
+    "total": "2018-05-25 0:12:46",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-24 19:39:51",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-24 12:40:06",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-24 2:19:46",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-23 23:09:05",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-23 20:20:08",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-23 18:25:11",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-23 17:58:13",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 32000,
+    "total": "2018-05-23 2:52:22",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 12000,
+    "total": "2018-04-23 18:51:50",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 71998,
+    "total": "2018-04-23 18:43:24",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 10000,
+    "total": "2018-04-23 11:06:43",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 20000,
+    "total": "2018-04-23 11:06:41",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 10000,
+    "total": "2018-04-23 10:58:26",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 20000,
+    "total": "2018-04-23 10:58:22",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 10000,
+    "total": "2018-04-22 22:16:51",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 25000,
+    "total": "2018-04-22 16:11:56",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 20000,
+    "total": "2018-04-22 14:34:13",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 10000,
+    "total": "2018-04-22 11:45:25",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 24000,
+    "total": "2018-04-22 7:31:04",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 9999,
+    "total": "2018-04-22 0:02:12",
+    "date": null
+  },
+  {
+    "price": 13,
+    "quantity": 129207,
+    "total": "2018-04-21 20:48:27",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 50000,
+    "total": "2018-04-21 9:20:03",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 20000,
+    "total": "2018-04-19 18:28:05",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 23999,
+    "total": "2018-04-19 16:42:41",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 20000,
+    "total": "2018-04-19 4:47:23",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 26999,
+    "total": "2018-04-19 3:55:21",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 24995,
+    "total": "2018-04-19 3:45:04",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 13999,
+    "total": "2018-04-18 20:08:16",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 15000,
+    "total": "2018-03-23 16:34:34",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 17000,
+    "total": "2018-03-23 4:37:17",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 17000,
+    "total": "2018-03-23 3:16:19",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 17000,
+    "total": "2018-03-23 3:14:52",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 34000,
+    "total": "2018-03-22 20:59:23",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 28000,
+    "total": "2018-03-22 20:59:19",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 15000,
+    "total": "2018-03-22 19:11:23",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 15000,
+    "total": "2018-03-22 1:31:20",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 15000,
+    "total": "2018-03-21 13:16:26",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 15000,
+    "total": "2018-03-21 13:11:49",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 25000,
+    "total": "2018-03-21 2:09:37",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 36000,
+    "total": "2018-03-21 1:33:47",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 14000,
+    "total": "2018-03-21 1:32:42",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 20000,
+    "total": "2018-03-20 12:16:29",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 13000,
+    "total": "2018-03-19 18:35:25",
+    "date": null
+  },
+  {
+    "price": 2,
+    "quantity": 30000,
+    "total": "2018-03-19 12:44:56",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 19000,
+    "total": "2018-03-19 1:23:19",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 16000,
+    "total": "2018-03-19 1:18:32",
+    "date": null
+  },
+  {
+    "price": 1,
+    "quantity": 19043,
+    "total": "2018-03-18 23:17:29",
+    "date": null
+  },
+  {
+    "price": 20,
+    "quantity": 200000,
+    "total": "2018-03-18 14:10:47",
+    "date": null
+  }
+]

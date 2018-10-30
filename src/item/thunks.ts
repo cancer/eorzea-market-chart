@@ -1,27 +1,16 @@
 import { addDays, format, isWithinRange, startOfToday, subDays } from 'date-fns';
 import { Dispatch } from 'redux';
 import { httpGet } from '../lib/http/http-get';
-import { getItemInfoUrl } from "../lib/xivdb/get-url";
+import { getItemInfoUrl } from '../lib/xivdb/get-url';
 import { getItemUrlMock } from '../lib/xivmb/get-url';
-import { makeQueryParams } from '../lib/xivmb/make-query-params';
-import { InfoResponse } from "../list/thunks";
+import { InfoResponse } from '../list/thunks';
 import { getInfoAction, getItemAction } from './actions';
 import { ItemActionTypes, ItemHistory } from './reducers';
 
-export enum ItemCategory {
-  All,
-}
-
-export interface ItemRequest {
-  serverName: string;
-  keyword: string;
-  category: ItemCategory;
-}
-
 interface ItemResponse {
-  price: string;
-  quontity: number;
-  total: string;
+  price: number;
+  quantity: number;
+  total: number;
   date: string;
 }
 
@@ -37,45 +26,46 @@ const makeDates = (days: number): Date[] => {
     .reverse();
 };
 
-const makePoint = (date_: Date, prices: number[]): ItemHistory => {
+const makeDate = (date_: Date): { date: number; label: string } => {
   const date = date_.getTime();
+  return {
+    date,
+    label: format(date, dateFormat),
+  };
+};
 
-  if (prices.length < 1) {
-    return {
-      date,
-      label: format(date, dateFormat),
-    };
-  }
+const makeAverage = (history: ItemResponse[]): number => {
+  const totalPrice = history.reduce((a, v) => a + v.price * v.quantity, 0);
+  const totalCount = history.reduce((a, v) => a + v.quantity, 0);
 
-  const lower = Math.min(...prices);
-  const average = Math.round(prices.reduce((a, v) => a + v, 0) / prices.length);
-
-  return { date, lower, average, label: format(date, dateFormat) };
+  return Math.round(totalPrice / totalCount);
 };
 
 const adaptItemHistory = (res: ItemResponse[]): ItemHistory[] => {
   const dates = makeDates(30);
 
   const histories = dates.map(date => {
-    const prices = res
-      .filter(v => {
-        return isWithinRange(v.date, date, addDays(date, 1));
-      })
-      .map(v => parseInt(v.price.replace(',', ''), 10));
+    const history = res.filter(v => {
+      return isWithinRange(v.date, date, addDays(date, 1));
+    });
+    const prices = history.map(v => v.price);
+    const average = makeAverage(history);
 
-    return makePoint(date, prices);
+    return {
+      ...makeDate(date),
+      lower: prices.length > 0 ? Math.min(...prices) : undefined,
+      average,
+    };
   });
 
   return histories;
 };
 
-export const fetchItemHistory = (model: ItemRequest) => {
-  const url = getItemUrlMock(model.serverName);
-  const category = model.category === 0 ? '' : String(model.category);
-  const params = makeQueryParams(category, model.keyword);
+export const fetchItemHistory = (id: number) => {
+  const url = getItemUrlMock(id);
 
   return (dispatch: Dispatch<ItemActionTypes>) => {
-    httpGet<ItemResponse[]>(url, params)
+    httpGet<ItemResponse[]>(url)
       .then(result => adaptItemHistory(result))
       .then(value => {
         dispatch(getItemAction(value));
@@ -97,7 +87,7 @@ const adaptInfo = (res: InfoResponse): AdaptedInfo => {
 
 export const fetchItemInfo = (id: number) => {
   const url = getItemInfoUrl(id);
-  
+
   return (dispatch: Dispatch<ItemActionTypes>) => {
     httpGet<InfoResponse>(url)
       .then(result => adaptInfo(result))
@@ -106,4 +96,3 @@ export const fetchItemInfo = (id: number) => {
       });
   };
 };
-

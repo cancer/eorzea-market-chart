@@ -7,7 +7,7 @@ import { RootState } from '../reducers';
 import Chart from './ChartComponent';
 import './ItemContainer.css';
 import { ItemHistory } from './reducers';
-import { fetchItemHistory, fetchItemInfo, ItemCategory, ItemRequest } from './thunks';
+import { fetchItemHistory, fetchItemInfo } from './thunks';
 
 interface StateProps {
   histories: ItemHistory[];
@@ -17,7 +17,7 @@ interface StateProps {
 }
 
 interface DispatchProps {
-  fetchItemHistory: (model: ItemRequest) => void;
+  fetchItemHistory: (id: number) => void;
   fetchItemInfo: (id: number) => void;
   hideItem: () => void;
 }
@@ -45,12 +45,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 const itemLifecycle = lifecycle<Props, {}>({
   componentDidMount() {
-    const model = {
-      serverName: 'Tonberry',
-      category: ItemCategory.All,
-      keyword: '',
-    };
-    this.props.fetchItemHistory(model);
+    this.props.fetchItemHistory(this.props.id);
     this.props.fetchItemInfo(this.props.id);
   },
 });
@@ -68,7 +63,7 @@ const ItemContainer = function Item(props: Props) {
             {latest.lower ? (
               <>
                 <span className="Unit">Gil</span>
-                <span className="Price">latest.lower</span>
+                <span className="Price">{latest.lower}</span>
               </>
             ) : (
               <span className="NoData">No Data</span>
@@ -79,7 +74,7 @@ const ItemContainer = function Item(props: Props) {
             {latest.average ? (
               <>
                 <span className="Unit">Gil</span>
-                <span className="Price">latest.average</span>
+                <span className="Price">{latest.average}</span>
               </>
             ) : (
               <span className="NoData">No Data</span>
@@ -91,7 +86,7 @@ const ItemContainer = function Item(props: Props) {
         </div>
         <div className="Footer">
           <button className="Close" onClick={() => props.hideItem()}>
-            x close
+            close
           </button>
         </div>
       </div>

@@ -11,7 +11,7 @@
 
 .ItemInner {
     display: grid;
-    grid-template-columns: 216px 250px auto;
+    grid-template-columns: 216px  auto;
     grid-template-rows: 76px 76px 800px auto;
     grid-template-areas: "icon name"
     "icon price"
@@ -23,6 +23,8 @@
 .ItemInner .Icon {
     grid-area: icon;
     padding-left: 70px;
+    width: 120px;
+    height: 120px;
 }
 
 .ItemInner .Name {
