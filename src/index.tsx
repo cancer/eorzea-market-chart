@@ -1,20 +1,22 @@
-import * as React from 'react';
+import createBrowserHistory from "history/createBrowserHistory";
+import * as React from "react";
 import * as ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
-import { createLogger } from 'redux-logger';
-import thunk from 'redux-thunk';
-import App from './App';
+import UniversalRouter from "universal-router";
+import { HistoryContext } from "./history";
 import './index.css';
-import reducers from './reducers';
+import { routes } from "./Router";
 
-const middleWare = [thunk, createLogger()];
+const router = new UniversalRouter(routes);
+const history = createBrowserHistory();
 
-const store = createStore(reducers, applyMiddleware(...middleWare));
+const whenRouterResolved = (el: JSX.Element) => {
+  ReactDOM.render(
+    <HistoryContext.Provider value={history}>{el}</HistoryContext.Provider>,
+    document.getElementById('root'),
+  );
+};
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root') as HTMLElement,
-);
+history.listen(path => {
+  router.resolve(path).then(whenRouterResolved)
+});
+router.resolve(history.location).then(whenRouterResolved);

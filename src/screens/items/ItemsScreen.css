@@ -1,15 +1,15 @@
-.List {
+.Items {
     margin: 0 auto 0;
     padding: 0 32px;
 }
 
-.ListItem,
-.ListItemHeader {
+.Item,
+.ItemTableHead {
     list-style: none;
 }
 
-.ListItem a,
-.ListItemHeader {
+.Item a,
+.ItemTableHead {
     display: block;
     width: 100%;
     height: 100%;
@@ -24,27 +24,27 @@
     text-decoration: none;
 }
 
-.ListItem a:hover {
+.Item a:hover {
     background-color: rgba(228, 207, 56, 0.05);
 }
 
-.ListItemHeader {
+.ItemTableHead {
     grid-template-rows: 30px auto;
 }
 
-.ListItem .Name,
-.ListItemHeader .Name {
+.Item .Name,
+.ItemTableHead .Name {
     grid-area: name;
     font-size: 20px;
 }
 
-.ListItem .Fav {
+.Item .Fav {
     grid-area: fav;
     width: 60px;
     height: 60px;
 }
 
-.ListItem .Fav button {
+.Item .Fav button {
     background: transparent;
     border: none;
     line-height: 60px;
@@ -52,29 +52,29 @@
     font-size: 24px;
 }
 
-.ListItem .Fav .Disabled {
+.Item .Fav .Disabled {
     color: #656f7d;
 }
 
-.ListItem .Fav button:hover,
-.ListItem .Fav .Enabled {
+.Item .Fav button:hover,
+.Item .Fav .Enabled {
     color: #d8a816;
 }
 
-.ListItem .Icon {
+.Item .Icon {
     grid-area: icon;
     width: 60px;
     height: 60px;
 }
 
-.ListItem .Price,
-.ListItemHeader .Price {
+.Item .Price,
+.ItemTableHead .Price {
     grid-area: price;
     font-size: 20px;
 }
 
-.ListItem .Date,
-.ListItemHeader .Date {
+.Item .Date,
+.ItemTableHead .Date {
     grid-area: date;
     font-size: 20px;
     color: #6ab0ce;
